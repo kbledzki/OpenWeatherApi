@@ -1,5 +1,8 @@
 package com.java.weather.webclient;
 
+import com.java.weather.dto.OpenWeatherDto;
+import com.java.weather.dto.OpenWeatherMainDto;
+import com.java.weather.model.Weather;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -10,11 +13,17 @@ public class WeatherClient {
     private String WEATHER_URL;
     @Value("${weatherClient.API_KEY}")
     public String API_KEY;
-    private RestTemplate restTemplate = new RestTemplate();
-    public Weather getWeatherForCity(double lat, double lon){
-        Weather response = restTemplate.getForObject(WEATHER_URL + "weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric&lang=pl",
-                Weather.class,
+    private final RestTemplate restTemplate = new RestTemplate();
+
+    public Weather getWeatherForCity(double lat, double lon) {
+        OpenWeatherMainDto response = restTemplate.getForObject(WEATHER_URL + "weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric&lang=pl",
+                OpenWeatherMainDto.class,
                 lat, lon,
                 API_KEY);
-        return response;
+        return Weather.builder()
+                .temp(response.getMain().getTemp())
+                .pressure(response.getMain().getPressure())
+                .humidity(response.getMain().getHumidity())
+                .build();
     }
+}

@@ -1,13 +1,11 @@
-package com.java.weather.model;
+package com.java.weather.dto;
 
 import lombok.*;
 
 @Getter
-@Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weather {
+public class OpenWeatherDto {
     private float temp;
     private int pressure;
     private int humidity;

@@ -11,7 +11,7 @@ public class WeatherService {
         this.weatherClient = weatherClient;
     }
 
-    public Weather getWeather(double lat, double lon){
-        return weatherClient.getWeatherForCity(lat,lon);
+    public Weather getWeather(String city){
+        return weatherClient.getWeatherForCity(city);
     }
 }

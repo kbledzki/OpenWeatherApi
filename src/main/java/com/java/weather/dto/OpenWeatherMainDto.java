@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OpenWeatherMainDto {
     private OpenWeatherDto main;
-
+    private int id;
 }

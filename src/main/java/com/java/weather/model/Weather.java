@@ -3,12 +3,13 @@ package com.java.weather.model;
 import lombok.*;
 
 @Getter
-@Setter
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Weather {
-    private float temp;
+    private long id;
+    private int temp;
     private int pressure;
     private int humidity;
+    private String description;
+    private String icon;
+    private double speed;
 }

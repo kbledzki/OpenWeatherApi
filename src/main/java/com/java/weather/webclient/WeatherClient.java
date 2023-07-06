@@ -1,6 +1,5 @@
 package com.java.weather.webclient;
 
-import com.java.weather.dto.OpenWeatherDto;
 import com.java.weather.dto.OpenWeatherMainDto;
 import com.java.weather.model.Weather;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +20,7 @@ public class WeatherClient {
                 lat, lon,
                 API_KEY);
         return Weather.builder()
+                .id(response.getId())
                 .temp(response.getMain().getTemp())
                 .pressure(response.getMain().getPressure())
                 .humidity(response.getMain().getHumidity())

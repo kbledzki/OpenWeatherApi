@@ -12,4 +12,5 @@ public class Weather {
     private String description;
     private String icon;
     private double speed;
+    private String name;
 }

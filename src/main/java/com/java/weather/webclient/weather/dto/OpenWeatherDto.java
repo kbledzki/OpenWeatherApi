@@ -8,4 +8,5 @@ public class OpenWeatherDto {
     private OpenWeatherWeatherDto [] weather;
     private OpenWeatherWindDto wind;
     private long id;
+    private String name;
 }

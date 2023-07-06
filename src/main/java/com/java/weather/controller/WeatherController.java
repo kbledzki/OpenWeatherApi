@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class WeatherController {
     private final WeatherService weatherService;
@@ -18,7 +20,8 @@ public class WeatherController {
     @GetMapping("/weather/{city}")
     public String getWeather(@PathVariable String city, Model model) {
         Weather weather = weatherService.getWeather(city);
-        model.addAttribute("places", weather);
-        return "places";
+        model.addAttribute("weather", weather);
+        model.addAttribute("localDateTime", LocalDateTime.now());
+        return "weather";
     }
 }

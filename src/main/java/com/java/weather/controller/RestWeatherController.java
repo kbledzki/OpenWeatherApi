@@ -13,8 +13,9 @@ public class RestWeatherController {
     public RestWeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
+
     @GetMapping("/weather/{city}")
-    public Weather getWeather(String city){
+    public Weather getWeather(String city) {
         return weatherService.getWeather(city);
     }
 }

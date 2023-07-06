@@ -1,6 +1,6 @@
-package com.java.weather.webclient;
+package com.java.weather.webclient.weather.client;
 
-import com.java.weather.dto.OpenWeatherMainDto;
+import com.java.weather.webclient.weather.dto.OpenWeatherMainDto;
 import com.java.weather.model.Weather;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

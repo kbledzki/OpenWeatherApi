@@ -1,4 +1,4 @@
-package com.java.weather.dto;
+package com.java.weather.webclient.weather.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OpenWeatherMainDto {
-    private OpenWeatherDto main;
-    private int id;
+    private int temp;
+    private int pressure;
+    private int humidity;
 }

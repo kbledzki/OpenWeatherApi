@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class WeatherController {
     private final WeatherService weatherService;
+
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
+
     @GetMapping("/weather/{city}")
     public String getWeather(@PathVariable String city, Model model) {
         Weather weather = weatherService.getWeather(city);
